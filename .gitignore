@@ -1,0 +1,15 @@
+# Dependencies and build output
+node_modules/
+dist/
+.vite/
+
+# Secrets and local environment configuration
+.env
+.env.*
+!.env.example
+
+# Vercel project metadata
+.vercel/
+
+# Operating-system files
+.DS_Store
