@@ -1,6 +1,7 @@
 // Local Vite development proxies `/api` to the Express server. In production,
-// VITE_API_URL can point at a separately deployed API (for example on Vercel).
-const BASE = (import.meta.env.VITE_API_URL || "/api").replace(/\/$/, "");
+// VITE_API_URL is the deployed API origin; the Express routes live below `/api`.
+const API_ORIGIN = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
+const BASE = API_ORIGIN ? `${API_ORIGIN}/api` : "/api";
 
 async function handle(res) {
   if (!res.ok) {
