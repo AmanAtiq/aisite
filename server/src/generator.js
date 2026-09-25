@@ -304,7 +304,7 @@ export function getProviderConfig() {
     return {
       provider: "gemini",
       apiKey: geminiKey,
-      model: envModel || "gemini-2.5-flash",
+      model: envModel || "gemini-3.5-flash-lite",
     };
   }
 
@@ -318,7 +318,7 @@ export function getProviderConfig() {
       return {
         provider: "gemini",
         apiKey: anthropicKey,
-        model: envModel || "gemini-2.5-flash",
+        model: envModel || "gemini-3.5-flash-lite",
       };
     }
 
@@ -420,7 +420,7 @@ async function generateSiteWithGemini({ apiKey, model, prompt, history = [], cur
 
   const modelsToTry = [
     model,
-    "gemini-2.5-flash-lite",
+    "gemini-3.5-flash-lite",
     "gemini-3.1-flash-lite",
   ].filter((m, i, arr) => arr.indexOf(m) === i);
 
